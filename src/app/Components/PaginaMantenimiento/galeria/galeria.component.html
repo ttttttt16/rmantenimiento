@@ -1,0 +1,37 @@
+<h1>Reportes de Mantenimiento</h1>
+
+<div *ngIf="filtradoReportes.length > 0; else noReports" class="grid-container">
+    <div *ngFor="let Reporte of filtradoReportes; let i = index" class="grid-item">
+        <!-- Contenedor para la imagen -->
+        <div class="image-container">
+            <img class="grid-item-img" [src]="Reporte.url" alt="">
+        </div>
+
+        <!-- Contenedor para el texto y botones -->
+        <div class="content">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>{{ Reporte.creacion | date: 'dd/MM/yyyy HH:mm' }}</td>
+                        <td>{{ Reporte.nombre }}</td>
+                        <td>{{ Reporte.equipo }}</td>
+                        <td class="status">{{ Reporte.estado ? 'Activo' : 'Inactivo' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="alert">
+                {{ Reporte.descripcion }}
+            </p>
+
+            <div class="button-group">
+                <button class="details-btn">Ver detalles</button>
+                <button class="delete-btn" (click)="deletePhoto(Reporte.id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noReports>
+    <p>No hay reportes disponibles.</p>
+</ng-template>

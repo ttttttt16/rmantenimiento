@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  color: coral;
+}
+.grid-container {
+  margin: 0 1.5rem 1.5rem 0;
+  columns: 5 200px;
+  column-gap: 1.5rem;
+  width: 90%;
+  div {
+    width: 150px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .25s ease-in-out;
+    &:hover {
+      border-color: coral;
+    }
+    img {
+      width: 100%;
+      border-radius: 5px;
+      transition: all .25s ease-in-out;
+    }
+    p {
+      margin: 5px 0;
+      padding: 0;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  color: coral;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 1.5rem;
+  width: 90%;
+  margin: 1em auto;
+}
+
+.grid-item {
+  position: relative; /* Necesario para la superposición */
+  width: 100%;
+  height: 400px; /* Altura fija para la celda */
+  border: solid 2px black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden; /* Evita que los elementos se desborden */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre todo el contenedor */
+}
+
+.grid-item:hover .grid-item-img {
+  filter: grayscale(0); /* Activar color al pasar el mouse */
+}
+
+/* El contenido se coloca dentro de la imagen y está alineado al fondo */
+.content {
+  position: absolute;
+  bottom: 0; /* Alinea el contenido al fondo de la celda */
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro y transparente */
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.content table,
+.content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.content p {
+  font-style: italic;
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
+.details-btn,
+.delete-btn {
+  padding: 5px 10px;
+  background-color: coral;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.details-btn:hover,
+.delete-btn:hover {
+  background-color: darkorange;
+}
+/* 🌐 Responsividad para tablets */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+/* 📱 Responsividad para móviles */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna en celulares */
+  }
+
+  .grid-item {
+    height: 250px; /* Reducir la altura en pantallas pequeñas */
+  }
+
+  .content {
+    padding: 5px;
+    font-size: 14px; /* Reducir tamaño de fuente */
+  }
+
+  .details-btn,
+  .delete-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+table {
+  width: 100%;
+  border-collapse: separate; /* Permite el uso de border-spacing */
+  border-spacing: 8px; /* Espaciado entre celdas */
+}
+
+td {
+  padding: 6px 6px; /* Espaciado interno dentro de cada celda */
+  text-align: center;
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: rgba(255, 255, 255, 0.2); /* Un ligero fondo para mejorar visibilidad */
+}
+
+/* Agregar separación visual a los estados */
+.status {
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+/* Diferenciar estados con colores */
+.status:contains('Activo') {
+  color: green;
+}
+
+.status:contains('Inactivo') {
+  color: red;
+}
+button {
+  height: 25px;
+  margin: 5px;
+  width: 47%;
+  background-color: coral;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: monospace;
+  border: solid #404c5d 1px;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  border-radius: 5px;
+  background: linear-gradient(145deg, coral, #924e31);
+  -webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+    inset 5px 5px 10px #ed8f67, inset -5px -5px 10px #ee8051;
+  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+    inset 5px 5px 10px #a54b3b, inset -5px -5px 10px #a54b3b;
+}
+
+button:hover {
+  -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+  box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+  color: #d6d6d6;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+button:active {
+  -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+  box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+  color: #d6d6d6;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+

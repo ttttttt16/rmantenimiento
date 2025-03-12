@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #f4f4f4;
+}
+
+.card {
+  width: 90%;
+  max-width: 350px; /* Más compacto */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.camera {
+  max-width: 100%;
+  height: 180px; /* Reducida */
+  display: block;
+  margin: 0 auto 10px auto; /* Centrada y con menos separación */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Menos separación entre inputs */
+  font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+
+/* Estilo de los Inputs */
+.input {
+  margin-bottom: 8px;
+}
+
+.inputForm {
+  margin: 0.2em auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 28px; /* Un poco más pequeño */
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease-in-out;
+  background: #fff;
+}
+
+.inputForm:focus-within {
+  border: 1px solid #2d79f3;
+}
+
+.inputField, select {
+  width: 85%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  padding: 5px;
+  color: #333;
+  background: transparent;
+}
+
+/* Etiquetas de los inputs */
+.inputForm label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Select */
+.inputForm select {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+}
+
+/* Botón de Acción */
+.action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-button {
+  background: #2d79f3;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 4px;
+  height: 32px; /* Más pequeño */
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.action-button:hover {
+  background: #1e4bb8;
+}
+
+.action-button:active {
+  background: #16378a;
+}
+
+/* Sin efectos móviles */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+    max-width: 320px;
+  }
+  .camera {
+    height: 150px; /* Aún más pequeña en móviles */
+  }
+}
